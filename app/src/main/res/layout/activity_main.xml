@@ -4,27 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/txtBuscar"
+    <EditText
+        android:id="@+id/txtBusca"
         android:layout_width="match_parent"
-        android:layout_height="145dp"
+        android:layout_height="124dp"
         android:layout_weight="1"
-        tools:text="Buscar" />
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Buscar" />
 
     <Button
         android:id="@+id/btnBuscar"
-        android:layout_width="102dp"
-        android:layout_height="165dp"
+        android:layout_width="match_parent"
+        android:layout_height="127dp"
         android:layout_weight="1"
+        android:baselineAligned="false"
         android:text="@string/buscar" />
 
     <ListView
         android:id="@+id/ListSong"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:baselineAligned="false" />
 
 </LinearLayout>
