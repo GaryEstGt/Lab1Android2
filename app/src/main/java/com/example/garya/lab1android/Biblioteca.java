@@ -11,7 +11,7 @@ public class Biblioteca {
     }
 
     public void setBiblioteca(Cancion song) {
-        Cancion songTemp=new Cancion();
+        Cancion songTemp=new Cancion("","","",0);
         songTemp=song;
         biblioteca.put(songTemp.getNombre(),songTemp);
     }

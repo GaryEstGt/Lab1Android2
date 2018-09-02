@@ -6,6 +6,13 @@ public class Cancion{
    private String artista;
    private int duracion;
 
+    public Cancion(String Nombre, String Album, String Artista, int Duracion){
+        nombre=Nombre;
+        album=Album;
+        artista=Artista;
+        duracion=Duracion;
+
+    }
     public String getNombre() {
         return nombre;
     }
@@ -36,6 +43,14 @@ public class Cancion{
 
     public void setDuracion(int Duracion) {
         duracion = Duracion;
+    }
+    @Override
+    public String toString() {
+        return "Cancion : " +
+                "Nombre : " + nombre +
+                " | Album : " + album +
+                " | Artista : " + artista +
+                " | Duracion : " + duracion;
     }
 
 }

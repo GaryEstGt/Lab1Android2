@@ -15,15 +15,15 @@
         android:layout_weight="1"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Buscar" />
+        android:text="@string/buscar" />
 
     <Button
         android:id="@+id/btnBuscar"
-        android:layout_width="match_parent"
+        android:layout_width="368dp"
         android:layout_height="127dp"
         android:layout_weight="1"
         android:baselineAligned="false"
-        android:text="@string/buscar" />
+        android:text="Buscar" />
 
     <ListView
         android:id="@+id/ListSong"
@@ -31,5 +31,12 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:baselineAligned="false" />
+
+    <Button
+        android:id="@+id/btnPlaylist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/ver_playlist" />
 
 </LinearLayout>
