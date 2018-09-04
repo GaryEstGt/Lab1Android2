@@ -1,5 +1,6 @@
 package com.example.garya.lab1android;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -58,6 +59,8 @@ public class MainActivity extends AppCompatActivity {
                 ListSong.setAdapter(adapter);
                 break;
             case R.id.btnPlaylist:
+                Intent intent = new Intent(view.getContext(), Main2Activity.class);
+                startActivityForResult(intent, 0);
                 break;
         }
     }
