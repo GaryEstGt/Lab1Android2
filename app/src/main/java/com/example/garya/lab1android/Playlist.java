@@ -26,6 +26,18 @@ public class Playlist {
         return playlist;
     }
 
+    public List<Cancion> OrdenaAscendentemente() {
+        return playlist;
+    }
+
+    public List<Cancion> OrdenaDescendentemente() {
+        List<Cancion> lista = new LinkedList();
+        for (int i = 0; i < playlist.size(); i++) {
+            lista.set((playlist.size() - i) - 1, playlist.get(i));
+        }
+
+        return lista;
+    }
 
 
 }

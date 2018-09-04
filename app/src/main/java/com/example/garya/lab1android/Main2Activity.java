@@ -4,7 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -26,18 +29,26 @@ public class Main2Activity extends AppCompatActivity {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_Nombre:
-                Data.getInstance().playlist.OrdenaporNombre();
+                verEnLista(Data.getInstance().playlist.OrdenaporNombre());
                 break;
             case R.id.btnDuracion:
+                verEnLista(Data.getInstance().playlist.OrdenaporDuracion());
                 break;
             case R.id.btnascendente:
+                verEnLista(Data.getInstance().playlist.OrdenaAscendentemente());
                 break;
             case R.id.btnDescendente:
+                verEnLista(Data.getInstance().playlist.OrdenaDescendentemente());
                 break;
             case R.id.btnRegresar:
                 Intent intent2 = new Intent (view.getContext(), MainActivity.class);
                 startActivityForResult(intent2, 0);
                 break;
         }
+    }
+
+    public void verEnLista(List<Cancion> playlist){
+        ArrayAdapter<Cancion> adapter = new ArrayAdapter<Cancion>(this, android.R.layout.simple_list_item_1,playlist);
+        PlayView.setAdapter(adapter);
     }
 }
