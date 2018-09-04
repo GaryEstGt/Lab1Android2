@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
                 Cancion find[]= new Cancion[]{canciones.getBiblioteca().get(nombre)};
                 ArrayAdapter<Cancion> adapter = new ArrayAdapter<Cancion>(this, android.R.layout.simple_list_item_1,find);
                 ListSong.setAdapter(adapter);
+                //List FULL
                 break;
             case R.id.btnPlaylist:
                 Intent intent = new Intent(view.getContext(), Main2Activity.class);
