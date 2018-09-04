@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
                 nombre = txtBusca.getText().toString();
                 String dato[] = new String[]{canciones.getBiblioteca().get(nombre).toString()};
                 Cancion find[]= new Cancion[]{canciones.getBiblioteca().get(nombre)};
+                //Mostrar en lista
                 ArrayAdapter<Cancion> adapter = new ArrayAdapter<Cancion>(this, android.R.layout.simple_list_item_1,find);
                 ListSong.setAdapter(adapter);
                 break;
