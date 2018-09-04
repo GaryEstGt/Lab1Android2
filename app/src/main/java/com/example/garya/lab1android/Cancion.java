@@ -1,6 +1,7 @@
 package com.example.garya.lab1android;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 
 import java.util.Comparator;
 
@@ -55,6 +56,40 @@ public class Cancion{
                 " | Album : " + album +
                 " | Artista : " + artista +
                 " | Duracion : " + duracion;
+    }
+}
+
+class CompareByName implements Comparator<Cancion> {
+
+
+
+    @Override
+
+    public int compare(Cancion cancion1, Cancion cancion2) {
+
+        return cancion1.getNombre().compareTo(cancion2.getNombre());
+
+    }
+
+}
+
+class CompareByDuracion implements Comparator<Cancion> {
+
+
+
+    @Override
+
+    public int compare(Cancion cancion1, Cancion cancion2) {
+
+        if (cancion1.getDuracion() == cancion2.getDuracion()) {
+            return 0;
+        }
+        else if (cancion1.getDuracion() < cancion2.getDuracion()) {
+            return -1;
+        }
+        else{
+            return 1;
+        }
     }
 
 }

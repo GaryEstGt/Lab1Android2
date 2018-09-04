@@ -16,5 +16,6 @@ public class Data {
 
         return instanciaUnica;
     }
+
     public Playlist playlist =new Playlist();
 }

@@ -26,6 +26,7 @@ public class Main2Activity extends AppCompatActivity {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_Nombre:
+                Data.getInstance().playlist.OrdenaporNombre();
                 break;
             case R.id.btnDuracion:
                 break;
