@@ -11,7 +11,7 @@
         android:id="@+id/btn_Nombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nombre ascendente" />
+        android:text="Nombre" />
 
     <Button
         android:id="@+id/btnDuracion"
@@ -19,17 +19,25 @@
         android:layout_height="wrap_content"
         android:text="Duracion" />
 
+    <android.support.v7.widget.SwitchCompat
+        android:id="@+id/swAscendenteDescendente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Descendente" />
+
     <Button
         android:id="@+id/btnascendente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ascendente" />
+        android:text="ascendente"
+        android:visibility="invisible"/>
 
     <Button
         android:id="@+id/btnDescendente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Descendente" />
+        android:text="Descendente"
+        android:visibility="invisible"/>
 
     <ListView
         android:id="@+id/PList"

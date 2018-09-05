@@ -1,8 +1,8 @@
 package com.example.garya.lab1android;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.SwitchCompat;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -15,8 +15,10 @@ import butterknife.OnClick;
 
 public class Main2Activity extends AppCompatActivity {
 
-   @BindView(R.id.PList)
+    @BindView(R.id.PList)
     ListView PlayView;
+    @BindView(R.id.swAscendenteDescendente)
+    SwitchCompat swAscendenteDescendente;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,26 +31,20 @@ public class Main2Activity extends AppCompatActivity {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_Nombre:
-                verEnLista(Data.getInstance().playlist.OrdenaporNombre());
+                verEnLista(Data.getInstance().playlist.OrdenaporNombre(swAscendenteDescendente.isChecked()));
                 break;
             case R.id.btnDuracion:
-                verEnLista(Data.getInstance().playlist.OrdenaporDuracion());
-                break;
-            case R.id.btnascendente:
-                verEnLista(Data.getInstance().playlist.OrdenaAscendentemente());
-                break;
-            case R.id.btnDescendente:
-                verEnLista(Data.getInstance().playlist.OrdenaDescendentemente());
+                verEnLista(Data.getInstance().playlist.OrdenaporDuracion(swAscendenteDescendente.isChecked()));
                 break;
             //case R.id.btnRegresar:
-               // Intent intent2 = new Intent (getApplicationContext(), MainActivity.class);
-                //startActivity(intent2);
-              //  break;
+            // Intent intent2 = new Intent (getApplicationContext(), MainActivity.class);
+            //startActivity(intent2);
+            //  break;
         }
     }
 
-    public void verEnLista(List<Cancion> playlist){
-        ArrayAdapter<Cancion> adapter = new ArrayAdapter<Cancion>(this, android.R.layout.simple_list_item_1,playlist);
+    public void verEnLista(List<Cancion> playlist) {
+        ArrayAdapter<Cancion> adapter = new ArrayAdapter<Cancion>(this, android.R.layout.simple_list_item_1, playlist);
         PlayView.setAdapter(adapter);
     }
 }

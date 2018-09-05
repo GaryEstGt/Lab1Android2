@@ -14,19 +14,20 @@ public class Playlist {
         playlist.add(song);
     }
 
-    public List<Cancion> OrdenaporNombre() {
+    public List<Cancion> OrdenaporNombre(boolean Descendente) {
         Collections.sort(playlist, new CompareByName());
+        if (Descendente) {
+            return OrdenaDescendentemente();
+        }
 
         return playlist;
     }
 
-    public List<Cancion> OrdenaporDuracion() {
+    public List<Cancion> OrdenaporDuracion(boolean Descendente) {
         Collections.sort(playlist, new CompareByDuracion());
-
-        return playlist;
-    }
-
-    public List<Cancion> OrdenaAscendentemente() {
+        if (Descendente) {
+            return OrdenaDescendentemente();
+        }
         return playlist;
     }
 
