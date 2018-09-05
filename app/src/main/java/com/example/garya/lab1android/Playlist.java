@@ -39,6 +39,10 @@ public class Playlist {
 
         return lista;
     }
-
+    public boolean VerSiExiste(Cancion song){
+        boolean retorno=false;
+        for (Cancion item : playlist) { if ( song.getNombre()==item.getNombre() ){ retorno= true;} }
+        return retorno;
+    }
 
 }

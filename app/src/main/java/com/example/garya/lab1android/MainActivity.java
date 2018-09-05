@@ -35,13 +35,22 @@ public class MainActivity extends AppCompatActivity {
         canciones.setBiblioteca(new Cancion("With out me", "Single", "Eminem", 100));
         canciones.setBiblioteca(new Cancion("Imposible", "Nebula", "Khan", 200));
         canciones.setBiblioteca(new Cancion("Medios de manipulacion", "Single", "andrez y theerion", 200));
+        canciones.setBiblioteca(new Cancion("Stay with me", "Single", "Sam", 230));
+        canciones.setBiblioteca(new Cancion("Hello", "Single", "adele", 270));
         ListSong.setOnItemClickListener(new AdapterView.OnItemClickListener(){
 
             public void onItemClick(AdapterView<?> parent, View view, int position, long id){
                 int item = position;
                 Cancion itemval = (Cancion) ListSong.getItemAtPosition(position);
-                Toast.makeText(getApplicationContext(), "Cancion agregada al playlist", Toast.LENGTH_LONG).show();
-                Data.getInstance().playlist.setPlaylist(itemval);
+
+                if(Data.getInstance().playlist.VerSiExiste(itemval)==true){
+                    Toast.makeText(getApplicationContext(), "Cancion ya existente en playlist", Toast.LENGTH_LONG).show();
+                }
+                else{
+                    Toast.makeText(getApplicationContext(), "Cancion agregada al playlist", Toast.LENGTH_LONG).show();
+                    Data.getInstance().playlist.setPlaylist(itemval);
+                }
+
             }
 
         });

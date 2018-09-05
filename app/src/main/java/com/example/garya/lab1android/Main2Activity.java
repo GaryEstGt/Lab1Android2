@@ -1,5 +1,6 @@
 package com.example.garya.lab1android;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SwitchCompat;
@@ -46,5 +47,11 @@ public class Main2Activity extends AppCompatActivity {
     public void verEnLista(List<Cancion> playlist) {
         ArrayAdapter<Cancion> adapter = new ArrayAdapter<Cancion>(this, android.R.layout.simple_list_item_1, playlist);
         PlayView.setAdapter(adapter);
+    }
+
+    @OnClick(R.id.btnRegresar)
+    public void onViewClicked() {
+        Intent prueb2 = new Intent(Main2Activity.this, MainActivity.class);
+        startActivity(prueb2);
     }
 }
