@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         canciones.setBiblioteca(new Cancion("Tiempo de admitir", "Single", "andrez y theerion", 200));
         canciones.setBiblioteca(new Cancion("With out me", "Single", "Eminem", 100));
         canciones.setBiblioteca(new Cancion("Imposible", "Nebula", "Khan", 200));
-        canciones.setBiblioteca(new Cancion("Medios de manipulacion ", "Single", "andrez y theerion", 200));
+        canciones.setBiblioteca(new Cancion("Medios de manipulacion", "Single", "andrez y theerion", 200));
         ListSong.setOnItemClickListener(new AdapterView.OnItemClickListener(){
 
             public void onItemClick(AdapterView<?> parent, View view, int position, long id){
@@ -53,12 +53,16 @@ public class MainActivity extends AppCompatActivity {
             case R.id.btnBuscar:
                 String nombre;
                 nombre = txtBusca.getText().toString();
-                String dato[] = new String[]{canciones.getBiblioteca().get(nombre).toString()};
-                Cancion find[]= new Cancion[]{canciones.getBiblioteca().get(nombre)};
-                //Mostrar en lista
-                ArrayAdapter<Cancion> adapter = new ArrayAdapter<Cancion>(this, android.R.layout.simple_list_item_1,find);
-                ListSong.setAdapter(adapter);
-                //List FULL
+                if (canciones.getBiblioteca().containsKey(nombre)) {
+                    String dato[] = new String[]{canciones.getBiblioteca().get(nombre).toString()};
+                    Cancion find[]= new Cancion[]{canciones.getBiblioteca().get(nombre)};
+                    //Mostrar en lista
+                    ArrayAdapter<Cancion> adapter = new ArrayAdapter<Cancion>(this, android.R.layout.simple_list_item_1,find);
+                    ListSong.setAdapter(adapter);
+                }
+                else{
+                    Toast.makeText(getApplicationContext(), "Cancion no encontrada", Toast.LENGTH_LONG).show();
+                }
                 break;
             case R.id.btnPlaylist:
                 Intent prueb = new Intent(MainActivity.this, Main2Activity.class);
