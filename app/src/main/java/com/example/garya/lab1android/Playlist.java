@@ -31,9 +31,9 @@ public class Playlist {
     }
 
     public List<Cancion> OrdenaDescendentemente() {
-        List<Cancion> lista = new LinkedList();
-        for (int i = 0; i < playlist.size(); i++) {
-            lista.set((playlist.size() - i) - 1, playlist.get(i));
+        List<Cancion> lista = new LinkedList<Cancion>();
+        for (int i = playlist.size() - 1; i >= 0; i--) {
+            lista.add(playlist.get(i));
         }
 
         return lista;
