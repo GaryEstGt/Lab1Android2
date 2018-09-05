@@ -15,7 +15,7 @@ import butterknife.OnClick;
 
 public class Main2Activity extends AppCompatActivity {
 
-    @BindView(R.id.PlayView)
+   @BindView(R.id.PList)
     ListView PlayView;
 
     @Override
@@ -25,7 +25,7 @@ public class Main2Activity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.btn_Nombre, R.id.btnDuracion, R.id.btnascendente, R.id.btnDescendente, R.id.btnRegresar})
+    @OnClick({R.id.btn_Nombre, R.id.btnDuracion, R.id.btnascendente, R.id.btnDescendente})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_Nombre:
@@ -40,10 +40,10 @@ public class Main2Activity extends AppCompatActivity {
             case R.id.btnDescendente:
                 verEnLista(Data.getInstance().playlist.OrdenaDescendentemente());
                 break;
-            case R.id.btnRegresar:
-                Intent intent2 = new Intent (view.getContext(), MainActivity.class);
-                startActivityForResult(intent2, 0);
-                break;
+            //case R.id.btnRegresar:
+               // Intent intent2 = new Intent (getApplicationContext(), MainActivity.class);
+                //startActivity(intent2);
+              //  break;
         }
     }
 

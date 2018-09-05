@@ -11,7 +11,7 @@
         android:id="@+id/btn_Nombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nombre" />
+        android:text="Nombre ascendente" />
 
     <Button
         android:id="@+id/btnDuracion"
@@ -31,22 +31,9 @@
         android:layout_height="wrap_content"
         android:text="Descendente" />
 
-    <LinearLayout
+    <ListView
+        android:id="@+id/PList"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <ListView
-            android:id="@+id/PlayView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-
-            <Button
-                android:id="@+id/btnRegresar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Regresar" />
-        </ListView>
-    </LinearLayout>
+        android:layout_height="match_parent" />
 
 </LinearLayout>

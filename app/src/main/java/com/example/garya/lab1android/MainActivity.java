@@ -29,10 +29,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        canciones.setBiblioteca(new Cancion("Ocaso", "Single", "andrez", 200));
-        canciones.setBiblioteca(new Cancion("She", "Single", "andrez", 200));
+        canciones.setBiblioteca(new Cancion("Ocaso", "Single", "andrez", 120));
+        canciones.setBiblioteca(new Cancion("She", "Single", "andrez", 300));
         canciones.setBiblioteca(new Cancion("Tiempo de admitir", "Single", "andrez y theerion", 200));
-        canciones.setBiblioteca(new Cancion("With out me", "Single", "Eminem", 200));
+        canciones.setBiblioteca(new Cancion("With out me", "Single", "Eminem", 100));
         canciones.setBiblioteca(new Cancion("Imposible", "Nebula", "Khan", 200));
         canciones.setBiblioteca(new Cancion("Medios de manipulacion ", "Single", "andrez y theerion", 200));
         ListSong.setOnItemClickListener(new AdapterView.OnItemClickListener(){
@@ -61,8 +61,8 @@ public class MainActivity extends AppCompatActivity {
                 //List FULL
                 break;
             case R.id.btnPlaylist:
-                Intent intent = new Intent(view.getContext(), Main2Activity.class);
-                startActivityForResult(intent, 0);
+                Intent prueb = new Intent(MainActivity.this, Main2Activity.class);
+                startActivity(prueb);
                 break;
         }
     }
